@@ -4,3 +4,4 @@ __pycache__/
 audio/*.wav
 audio/*.png
 out/video_master.mp4
+share/
