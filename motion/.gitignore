@@ -1,3 +1,6 @@
 preview/
 out/frames/
 __pycache__/
+audio/*.wav
+audio/*.png
+out/video_master.mp4

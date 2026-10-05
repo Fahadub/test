@@ -65,7 +65,7 @@
   // ---------- drawing helpers ----------
   const FONTS = {
     arabic: "'Cairo', 'Noto Sans Arabic', sans-serif",       // clean modern Arabic (400/700/900)
-    kufi: "'Reem Kufi', 'Cairo', sans-serif",               // geometric military-looking Arabic headline (400-700)
+    kufi: "'Lalezar', 'Cairo', sans-serif",                 // heavy display Arabic headline (single weight; clear ح/خ/ج unlike Reem Kufi)
     naskh: "'Amiri', serif",                                 // classical calligraphic Arabic (700) — flag shahada
     latin: "'Oswald', 'Cairo', sans-serif",                  // condensed latin / digits for HUD (200-700)
   };
@@ -84,7 +84,7 @@
     ctx.textBaseline = o.baseline;
     ctx.direction = /[؀-ۿ]/.test(str) ? 'rtl' : 'ltr';
     if (o.letterSpacing) ctx.letterSpacing = o.letterSpacing + 'px';
-    ctx.wordSpacing = (o.wordSpacing != null ? o.wordSpacing : o.family === 'kufi' ? o.size * 0.22 : 0) + 'px';
+    ctx.wordSpacing = (o.wordSpacing != null ? o.wordSpacing : o.family === 'kufi' ? o.size * 0.04 : 0) + 'px';
     if (o.shadow) { ctx.shadowColor = 'rgba(0,0,0,0.75)'; ctx.shadowBlur = o.shadow; ctx.shadowOffsetY = o.shadow * 0.25; }
     if (o.glow) { ctx.shadowColor = o.glowColor || o.color; ctx.shadowBlur = o.glow; }
     if (o.stroke) { ctx.lineJoin = 'round'; ctx.lineWidth = o.stroke; ctx.strokeStyle = o.strokeColor || '#000'; ctx.strokeText(str, x, y); }
@@ -98,7 +98,7 @@
     ctx.font = `${opts.weight || 700} ${opts.size || 64}px ${FONTS[opts.family || 'arabic'] || opts.family}`;
     ctx.direction = /[؀-ۿ]/.test(str) ? 'rtl' : 'ltr';
     if (opts.letterSpacing) ctx.letterSpacing = opts.letterSpacing + 'px';
-    ctx.wordSpacing = (opts.wordSpacing != null ? opts.wordSpacing : opts.family === 'kufi' ? (opts.size || 64) * 0.22 : 0) + 'px';
+    ctx.wordSpacing = (opts.wordSpacing != null ? opts.wordSpacing : opts.family === 'kufi' ? (opts.size || 64) * 0.04 : 0) + 'px';
     const m = ctx.measureText(str).width;
     ctx.restore();
     return m;
@@ -204,7 +204,7 @@
 
   async function boot() {
     setup();
-    const fams = ["900 40px 'Cairo'", "700 40px 'Cairo'", "400 40px 'Cairo'", "700 40px 'Reem Kufi'", "700 40px 'Amiri'", "700 40px 'Oswald'", "500 40px 'Oswald'"];
+    const fams = ["900 40px 'Cairo'", "700 40px 'Cairo'", "400 40px 'Cairo'", "400 40px 'Lalezar'", "700 40px 'Amiri'", "700 40px 'Oswald'", "500 40px 'Oswald'"];
     await Promise.all(fams.map((f) => document.fonts.load(f, 'ابجد 0123 ٧')));
     await document.fonts.ready;
     if (M.assets.init) await M.assets.init();

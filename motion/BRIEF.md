@@ -33,7 +33,7 @@ followed by a 7-day countdown. It does **not** depict a real, named operation.
   `ctx.filter = 'blur(...)'` on full-screen layers is very expensive — blur small offscreen canvases instead, or fake glows with radial gradients / `shadowBlur` on few objects.
 - Helpers in `M`: `clamp, lerp, invLerp, prog(t,a,b), env(t,a,b,fadeIn,fadeOut), ease.*, hash, rng, noise1, shake(t,intensity),
   text(ctx,str,x,y,{size,family:'arabic'|'kufi'|'naskh'|'latin',weight,color,align,baseline,glow,glowColor,stroke,strokeColor,alpha,letterSpacing,wordSpacing,shadow}),
-  measure, arDigits, vignette, fill, roundRect, W, H, FPS`. Fonts: Cairo 400/700/900 (`arabic`), Reem Kufi 700 (`kufi`, headline),
+  measure, arDigits, vignette, fill, roundRect, W, H, FPS`. Fonts: Cairo 400/700/900 (`arabic`), Lalezar (`kufi`, heavy headline),
   Amiri 700 (`naskh`, calligraphy/flag), Oswald 500/700 (`latin`, HUD numerals).
 - The engine already adds a global vignette + film grain and fades from black at 0–0.4 s and to black at 66.4–67 s.
 - Shared drawing library: `assets.js` → `M.assets.*`, documented in `ASSETS.md` (jets, tanks, helicopters, ship, soldiers, flag, sky, dunes, clouds, smoke, explosions, muzzle flash, HUD bits). Reuse it for visual consistency; you may extend a scene with local helpers in your own file.
