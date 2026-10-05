@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>درع الوطن — Motion</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  html,body{margin:0;background:#000;overflow:hidden}
+  #stage{display:block;width:1920px;height:1080px}
+  /* keep every font face referenced so the browser loads it */
+  .preload{position:absolute;left:-9999px;top:0;font-size:20px}
+</style>
+</head>
+<body>
+<canvas id="stage" width="1920" height="1080"></canvas>
+<div class="preload" aria-hidden="true">
+  <span style="font-family:Cairo;font-weight:900">ابجد</span><span style="font-family:Cairo;font-weight:700">ابجد</span><span style="font-family:Cairo;font-weight:400">ابجد</span>
+  <span style="font-family:'Reem Kufi';font-weight:700">ابجد</span><span style="font-family:Amiri;font-weight:700">ابجد</span>
+  <span style="font-family:Oswald;font-weight:700">AB 01</span><span style="font-family:Oswald;font-weight:500">AB 01</span>
+</div>
+<script src="engine.js"></script>
+<script src="assets.js"></script>
+<script src="scenes/s1_intro.js"></script>
+<script src="scenes/s2_flag.js"></script>
+<script src="scenes/s3_air.js"></script>
+<script src="scenes/s4_ground.js"></script>
+<script src="scenes/s5_analysis.js"></script>
+<script src="scenes/s6_seven_days.js"></script>
+<script src="scenes/s7_finale.js"></script>
+</body>
+</html>
